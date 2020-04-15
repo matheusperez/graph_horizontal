@@ -1,7 +1,7 @@
 name: graph_horizontal
 description: A Graph Horizontal Flutter
 version: 0.0.1
-
+repository: https://github.com/gabuldev/graph_horizontal
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
