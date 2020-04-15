@@ -61,6 +61,8 @@ class _GraphHorizontalState extends State<GraphHorizontal> {
     return Column(
       children: _mountGraph
           .map((e) => GraphLabelWidget(
+                textLabelStyle: widget.textLabelStyle,
+                textValueStyle: widget.textValueStyle,
                 tooltipColor: widget.tooltipColor,
                 tooltipTextStyle: widget.tooltipTextStyle,
                 heigth: widget.height,
