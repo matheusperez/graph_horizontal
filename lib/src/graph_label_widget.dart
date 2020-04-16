@@ -105,11 +105,13 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                 flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 16),
-                  child: Text(
-                    widget.item.label,
-                    style: widget.textLabelStyle ?? TextStyle(),
-                    textDirection: TextDirection.rtl,
-                  ),
+                  child: widget.item.label != null
+                      ? Text(
+                          widget.item.label,
+                          style: widget.textLabelStyle ?? TextStyle(),
+                          textDirection: TextDirection.rtl,
+                        )
+                      : widget.item.icon,
                 )),
             Expanded(
               key: keyGraph,
@@ -131,16 +133,17 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
 
     _three() => Row(
           children: <Widget>[
-            Expanded(flex: 1, child: Container()),
             Expanded(
                 flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 16),
-                  child: Text(
-                    widget.item.label,
-                    style: widget.textLabelStyle ?? TextStyle(),
-                    textDirection: TextDirection.rtl,
-                  ),
+                  child: widget.item.label != null
+                      ? Text(
+                          widget.item.label,
+                          style: widget.textLabelStyle ?? TextStyle(),
+                          textDirection: TextDirection.rtl,
+                        )
+                      : widget.item.icon,
                 )),
             Expanded(
               key: keyGraph,
@@ -169,7 +172,6 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                         );
                       }),
                 )),
-            Expanded(flex: 1, child: Container()),
           ],
         );
 
