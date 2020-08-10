@@ -25,4 +25,7 @@ class GraphItem {
       return "(${value.toStringAsFixed(0)}%)";
     }
   }
+
+  @override
+  String toString() => '${label}';
 }

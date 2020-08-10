@@ -42,7 +42,6 @@ class _GraphHorizontalState extends State<GraphHorizontal> {
     var total = 0.0;
 
     widget.items.forEach((element) {
-      print(element.value);
       total += element.value;
     });
     if (total > 0) {
