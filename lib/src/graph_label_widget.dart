@@ -131,10 +131,10 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
           ],
         );
 
-    _three() => Row(
+_three() => Row(
           children: <Widget>[
             Expanded(
-                flex: 2,
+                flex: 3,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: widget.item.label != null
@@ -142,6 +142,8 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                           widget.item.label,
                           style: widget.textLabelStyle ?? TextStyle(),
                           textDirection: TextDirection.rtl,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                         )
                       : widget.item.icon,
                 )),
