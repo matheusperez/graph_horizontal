@@ -47,7 +47,7 @@ class _GraphHorizontalState extends State<GraphHorizontal> {
     if (total > 0) {
       for (var item in widget.items) {
         list.add(item.copyWith(
-            value: item.value / total, tooltip: item.value.toString()));
+            value: item.value / total, tooltip: item.tooltip));
       }
       return list;
     } else {
