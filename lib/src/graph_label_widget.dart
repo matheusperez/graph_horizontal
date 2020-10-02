@@ -164,7 +164,7 @@ _three() => Row(
               ),
             ),
             Expanded(
-                flex: 2,
+                flex: 1,
                 child: Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: AnimatedBuilder(
@@ -173,6 +173,7 @@ _three() => Row(
                         return Text(
                           widget.item.valueToString(_item.value),
                           textAlign: TextAlign.right,
+                          overflow: TextOverflow.ellipsis,
                           style: widget.textValueStyle ?? TextStyle(),
                         );
                       }),
