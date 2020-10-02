@@ -151,7 +151,7 @@ _three() => Row(
                 )),
             Expanded(
               key: keyGraph,
-              flex: 2,
+              flex: 4,
               child: GraphItemWidget(
                 tooltipColor: widget.tooltipColor,
                 tooltipTextStyle: widget.tooltipTextStyle,
