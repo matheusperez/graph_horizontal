@@ -172,6 +172,7 @@ _three() => Row(
                       builder: (context, snapshot) {
                         return Text(
                           widget.item.valueToString(_item.value),
+                          textAlign: TextAlign.right,
                           style: widget.textValueStyle ?? TextStyle(),
                         );
                       }),
