@@ -146,27 +146,33 @@ _three() => Row(
                     )
                   : widget.item.icon,
             ),
-            GraphItemWidget(
-              tooltipColor: widget.tooltipColor,
-              tooltipTextStyle: widget.tooltipTextStyle,
-              height: widget.heigth,
-              controller: _controller,
-              item: widget.item,
-              width: width,
-              colorBackground: widget.colorBackground,
-              colorItem: widget.colorItem,
+            Expanded(
+              key: keyGraph,
+              flex: 4,
+              child: GraphItemWidget(
+                tooltipColor: widget.tooltipColor,
+                tooltipTextStyle: widget.tooltipTextStyle,
+                height: widget.heigth,
+                controller: _controller,
+                item: widget.item,
+                width: width,
+                colorBackground: widget.colorBackground,
+                colorItem: widget.colorItem,
+              ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 8),
-              child: AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, snapshot) {
-                    return Text(
-                      widget.item.valueToString(_item.value),
-                      style: widget.textValueStyle ?? TextStyle(),
-                    );
-                  }),
-            ),
+            Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 8),
+                  child: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, snapshot) {
+                        return Text(
+                          widget.item.valueToString(_item.value),
+                          style: widget.textValueStyle ?? TextStyle(),
+                        );
+                      }),
+                )),
           ],
         );
 
