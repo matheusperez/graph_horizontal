@@ -134,47 +134,39 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
 
 _three() => Row(
           children: <Widget>[
-            Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: widget.item.label != null
-                      ? Text(
-                          widget.item.label,
-                          style: widget.textLabelStyle ?? TextStyle(),
-                          textDirection: TextDirection.rtl,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                        )
-                      : widget.item.icon,
-                )),
-            Expanded(
-              key: keyGraph,
-              flex: 4,
-              child: GraphItemWidget(
-                tooltipColor: widget.tooltipColor,
-                tooltipTextStyle: widget.tooltipTextStyle,
-                height: widget.heigth,
-                controller: _controller,
-                item: widget.item,
-                width: width,
-                colorBackground: widget.colorBackground,
-                colorItem: widget.colorItem,
-              ),
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: widget.item.label != null
+                  ? Text(
+                      widget.item.label,
+                      style: widget.textLabelStyle ?? TextStyle(),
+                      textDirection: TextDirection.rtl,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                    )
+                  : widget.item.icon,
             ),
-            Expanded(
-                flex: 2,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: AnimatedBuilder(
-                      animation: _controller,
-                      builder: (context, snapshot) {
-                        return Text(
-                          widget.item.valueToString(_item.value),
-                          style: widget.textValueStyle ?? TextStyle(),
-                        );
-                      }),
-                )),
+            GraphItemWidget(
+              tooltipColor: widget.tooltipColor,
+              tooltipTextStyle: widget.tooltipTextStyle,
+              height: widget.heigth,
+              controller: _controller,
+              item: widget.item,
+              width: width,
+              colorBackground: widget.colorBackground,
+              colorItem: widget.colorItem,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 8),
+              child: AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, snapshot) {
+                    return Text(
+                      widget.item.valueToString(_item.value),
+                      style: widget.textValueStyle ?? TextStyle(),
+                    );
+                  }),
+            ),
           ],
         );
 
