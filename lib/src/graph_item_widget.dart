@@ -72,7 +72,7 @@ class _GraphItemWidgetState extends State<GraphItemWidget>
             borderRadius: BorderRadius.circular(30)),
         key: widget.key,
         height: widget.height,
-        width: widget.width,
+        width: double.infinity,
         child: Stack(
           children: <Widget>[
             AnimatedBuilder(
