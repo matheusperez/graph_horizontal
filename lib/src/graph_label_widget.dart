@@ -147,7 +147,13 @@ _three() => Row(
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                         )
-                      : widget.item.icon,
+                      : Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      widget.item.icon
+                    ],
+                  ),
                 )),
             Expanded(
               key: keyGraph,
