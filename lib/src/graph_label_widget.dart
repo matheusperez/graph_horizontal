@@ -16,6 +16,7 @@ class GraphLabelWidget extends StatefulWidget {
   final double heigth;
   final Color tooltipColor;
   final TextStyle tooltipTextStyle;
+  final double paddingBottom;
   GraphLabelWidget(
       {Key key,
       @required this.item,
@@ -28,7 +29,7 @@ class GraphLabelWidget extends StatefulWidget {
       this.textValueStyle,
       this.heigth,
       this.tooltipColor,
-      this.tooltipTextStyle})
+      this.tooltipTextStyle, this.paddingBottom = 16})
       : super(key: key);
 
   @override
@@ -181,7 +182,7 @@ _three() => Row(
       case GraphType.one:
         {
           return Padding(
-            padding: const EdgeInsets.only(top: 16),
+            padding: EdgeInsets.only(bottom: widget.paddingBottom),
             child: _one(),
           );
         }
@@ -190,7 +191,7 @@ _three() => Row(
       case GraphType.two:
         {
           return Padding(
-            padding: const EdgeInsets.only(top: 16),
+            padding: EdgeInsets.only(bottom: widget.paddingBottom),
             child: _two(),
           );
         }
@@ -199,7 +200,7 @@ _three() => Row(
       default:
         {
           return Padding(
-            padding: const EdgeInsets.only(top: 16),
+            padding: EdgeInsets.only(bottom: widget.paddingBottom),
             child: _three(),
           );
         }

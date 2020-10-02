@@ -17,6 +17,8 @@ class GraphHorizontal extends StatefulWidget {
   final double height;
   final Color tooltipColor;
   final TextStyle tooltipTextStyle;
+  final double paddingBottom;
+
   GraphHorizontal(
       {Key key,
       @required this.items,
@@ -29,7 +31,8 @@ class GraphHorizontal extends StatefulWidget {
       this.textValueStyle,
       this.height = 20,
       this.tooltipColor,
-      this.tooltipTextStyle})
+      this.tooltipTextStyle,
+      this.paddingBottom})
       : super(key: key);
 
   @override
@@ -46,8 +49,8 @@ class _GraphHorizontalState extends State<GraphHorizontal> {
     });
     if (total > 0) {
       for (var item in widget.items) {
-        list.add(item.copyWith(
-            value: item.value / total, tooltip: item.tooltip));
+        list.add(
+            item.copyWith(value: item.value / total, tooltip: item.tooltip));
       }
       return list;
     } else {
@@ -60,18 +63,18 @@ class _GraphHorizontalState extends State<GraphHorizontal> {
     return Column(
       children: _mountGraph
           .map((e) => GraphLabelWidget(
-                textLabelStyle: widget.textLabelStyle,
-                textValueStyle: widget.textValueStyle,
-                tooltipColor: widget.tooltipColor,
-                tooltipTextStyle: widget.tooltipTextStyle,
-                heigth: widget.height,
-                shouldAnimate: widget.shouldAnimate,
-                duration: widget.duration,
-                type: widget.type,
-                item: e,
-                colorBackground: widget.colorBackground ?? Colors.grey[300],
-                colorItem: widget.colorItem ?? Theme.of(context).primaryColor,
-              ))
+              textLabelStyle: widget.textLabelStyle,
+              textValueStyle: widget.textValueStyle,
+              tooltipColor: widget.tooltipColor,
+              tooltipTextStyle: widget.tooltipTextStyle,
+              heigth: widget.height,
+              shouldAnimate: widget.shouldAnimate,
+              duration: widget.duration,
+              type: widget.type,
+              item: e,
+              colorBackground: widget.colorBackground ?? Colors.grey[300],
+              colorItem: widget.colorItem ?? Theme.of(context).primaryColor,
+              paddingBottom: widget.paddingBottom))
           .toList(),
     );
   }
