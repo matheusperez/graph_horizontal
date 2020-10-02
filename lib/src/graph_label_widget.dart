@@ -161,7 +161,6 @@ _three() => Row(
               ),
             ),
             Expanded(
-                flex: 2,
                 child: Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: AnimatedBuilder(
