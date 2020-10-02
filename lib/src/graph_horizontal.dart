@@ -32,7 +32,7 @@ class GraphHorizontal extends StatefulWidget {
       this.height = 20,
       this.tooltipColor,
       this.tooltipTextStyle,
-      this.paddingBottom})
+      this.paddingBottom = 16})
       : super(key: key);
 
   @override

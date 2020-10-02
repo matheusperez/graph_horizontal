@@ -29,7 +29,8 @@ class GraphLabelWidget extends StatefulWidget {
       this.textValueStyle,
       this.heigth,
       this.tooltipColor,
-      this.tooltipTextStyle, this.paddingBottom = 16})
+      this.tooltipTextStyle,
+      this.paddingBottom})
       : super(key: key);
 
   @override
