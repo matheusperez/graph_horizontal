@@ -93,7 +93,7 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                 item: widget.item,
                 width: width,
                 colorBackground: widget.colorBackground,
-                colorItem: widget.colorItem,
+                colorItem: widget.item.itemColor ?? widget.colorItem,
               ),
             ),
             Expanded(flex: 1, child: Container()),
@@ -133,10 +133,10 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
           ],
         );
 
-_three() => Row(
+    _three() => Row(
           children: <Widget>[
             Expanded(
-                flex: widget.item.label == null ? 2 : 3 ,
+                flex: widget.item.label == null ? 2 : 3,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8),
                   child: widget.item.label != null
@@ -144,16 +144,14 @@ _three() => Row(
                           widget.item.label,
                           style: widget.textLabelStyle ?? TextStyle(),
                           textDirection: TextDirection.rtl,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         )
                       : Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      widget.item.icon
-                    ],
-                  ),
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [widget.item.icon],
+                        ),
                 )),
             Expanded(
               key: keyGraph,
