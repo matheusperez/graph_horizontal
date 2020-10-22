@@ -16,7 +16,12 @@ class GraphItem {
     this.itemColor,
   });
 
-  GraphItem copyWith({num value, String label, String tooltip}) {
+  GraphItem copyWith({
+    num value,
+    String label,
+    String tooltip,
+    Color itemColor,
+  }) {
     return GraphItem(
       icon: this.icon,
       value: value ?? this.value,
