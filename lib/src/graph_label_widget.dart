@@ -126,7 +126,7 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                 item: widget.item,
                 width: width,
                 colorBackground: widget.colorBackground,
-                colorItem: widget.colorItem,
+                colorItem: widget.item.itemColor ?? widget.colorItem,
               ),
             ),
             Expanded(flex: 2, child: Container()),
@@ -164,7 +164,7 @@ class _GraphLabelWidgetState extends State<GraphLabelWidget>
                 item: widget.item,
                 width: width,
                 colorBackground: widget.colorBackground,
-                colorItem: widget.colorItem,
+                colorItem: widget.item.itemColor ?? widget.colorItem,
               ),
             ),
             Expanded(
